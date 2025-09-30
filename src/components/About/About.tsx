@@ -21,9 +21,8 @@ const About = () => {
               and system design.
             </p>
             <p>
-              When I'm not coding, I enjoy exploring new technologies, 
-              golfing ⛳, and practicing brazilian jiu-jitsu 🥷. I believe in writing clean, maintainable code 
-              and fostering collaborative team environments.
+              When I'm not coding, I enjoy exploring new technologies, golfing ⛳, and practicing brazilian jiu-jitsu 🥷.
+              I believe in writing clean, maintainable code and fostering collaborative team environments.
             </p>
           </div>
           <div className="about-highlights">
@@ -32,7 +31,7 @@ const About = () => {
               <p>Years of Experience</p>
             </div>
             <div className="highlight-item">
-              <h3>15+</h3>
+              <h3>15</h3>
               <p>Teams Migrated to CI/CD</p>
             </div>
             <div className="highlight-item">
