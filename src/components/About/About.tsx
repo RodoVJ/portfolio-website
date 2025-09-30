@@ -21,8 +21,8 @@ const About = () => {
               and system design.
             </p>
             <p>
-              When I'm not coding, I enjoy exploring new technologies, contributing to open source, 
-              and practicing brazillian jiu-jitsu 🥷. I believe in writing clean, maintainable code 
+              When I'm not coding, I enjoy exploring new technologies, 
+              golfing ⛳, and practicing brazilian jiu-jitsu 🥷. I believe in writing clean, maintainable code 
               and fostering collaborative team environments.
             </p>
           </div>
