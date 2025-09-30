@@ -1,8 +1,8 @@
 import type { ContactInfo, Experience, Education, Skills } from '../types';
 
 export const contactInfo: ContactInfo = {
-  name: 'Ryan Vega',
-  email: 'ryanvega750@gmail.com',
+  name: 'Rodrigo Vega',
+  email: 'vegarod75@gmail.com',
   location: 'St. Catharines, ON, Canada'
 };
 
