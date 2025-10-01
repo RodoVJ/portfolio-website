@@ -35,7 +35,7 @@ const About = () => {
               <p>Teams Migrated to CI/CD</p>
             </div>
             <div className="highlight-item">
-              <h3>20%</h3>
+              <h3>15%</h3>
               <p>User Retention Increase</p>
             </div>
             <div className="highlight-item">
