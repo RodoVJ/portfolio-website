@@ -41,7 +41,7 @@
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
   border-radius: 2px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .skill-item {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
@@ -65,7 +65,7 @@
 
 .skill-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
 }
 
 @media (max-width: 768px) {
