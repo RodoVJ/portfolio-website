@@ -1,4 +1,6 @@
 import type { ContactInfo, Experience, Education, Skills, Project } from '../types';
+import mitosVideo from '../assets/videos/mitos.mp4';
+import pandemicResearchImage from '../assets/images/pandemicResearch.png';
 
 export const contactInfo: ContactInfo = {
   name: 'Rodrigo Vega',
@@ -88,7 +90,7 @@ export const projects: Project[] = [
     title: 'Biological Cell Simulation',
     description: 'An interactive 3D simulation of mitochondrial dynamics in biological cells, designed to support research and education in cellular biology.',
     technologies: ['C#', 'Unity'],
-    videoUrl: '/assets/videos/mitos.mp4',
+    videoUrl: mitosVideo,
     githubUrl: 'https://github.com/StuartLab/Mitochondrio',
     highlights: [
       'Developed realistic cell simulations for biological research',
@@ -101,7 +103,7 @@ export const projects: Project[] = [
     title: 'Epidemic Network Modeling with Weighted Contact Networks',
     description: 'IEEE-published research using evolutionary algorithms to model epidemic spread through personal contact networks, optimizing for epidemic prediction and public health strategies.',
     technologies: ['Java', 'Evolutionary Algorithms', 'Graph Theory'],
-    imageUrl: '/assets/images/pandemicResearch.png',
+    imageUrl: pandemicResearchImage,
     researchPaperUrl: 'https://ieeexplore.ieee.org/document/9504685',
     highlights: [
       'Pioneered weighted edge representation for contact networks, improving epidemic prediction accuracy',
