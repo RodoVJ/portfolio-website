@@ -25,24 +25,6 @@ const About = () => {
               I believe in writing clean, maintainable code and fostering collaborative team environments.
             </p>
           </div>
-          <div className="about-highlights">
-            <div className="highlight-item">
-              <h3>4+</h3>
-              <p>Years of Experience</p>
-            </div>
-            <div className="highlight-item">
-              <h3>15</h3>
-              <p>Teams Migrated to CI/CD</p>
-            </div>
-            <div className="highlight-item">
-              <h3>15%</h3>
-              <p>User Retention Increase</p>
-            </div>
-            <div className="highlight-item">
-              <h3>80%</h3>
-              <p>Spam Reduction Achieved</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

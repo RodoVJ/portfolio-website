@@ -1,4 +1,4 @@
-import type { ContactInfo, Experience, Education, Skills } from '../types';
+import type { ContactInfo, Experience, Education, Skills, Project } from '../types';
 
 export const contactInfo: ContactInfo = {
   name: 'Rodrigo Vega',
@@ -81,4 +81,32 @@ export const education: Education[] = [
     period: 'Sept 2017 — June 2021',
     degree: 'Bachelor\'s degree in Computer Science and Biology with Honors'
   }
+];
+
+export const projects: Project[] = [
+  {
+    title: 'Biological Cell Simulation',
+    description: 'An interactive 3D simulation of mitochondrial dynamics in biological cells, designed to support research and education in cellular biology.',
+    technologies: ['C#', 'Unity'],
+    videoUrl: 'src/assets/videos/mitos.mp4',
+    githubUrl: 'https://github.com/StuartLab/Mitochondrio',
+    highlights: [
+      'Developed realistic cell simulations for biological research',
+      'Implemented 3D visualization of cellular processes',
+      'Created tools to analyze mitochondrial behavior',
+      'Accelerated biological research through computational modeling'
+    ]
+  },
+  {
+    title: 'Epidemic Network Modeling with Weighted Contact Networks',
+    description: 'IEEE-published research using evolutionary algorithms to model epidemic spread through personal contact networks, optimizing for epidemic prediction and public health strategies.',
+    technologies: ['Java', 'Evolutionary Algorithms', 'Graph Theory'],
+    imageUrl: 'src/assets/images/pandemicResearch.png',
+    researchPaperUrl: 'https://ieeexplore.ieee.org/document/9504685',
+    highlights: [
+      'Pioneered weighted edge representation for contact networks, improving epidemic prediction accuracy',
+      'Solved two complex problems: maximizing epidemic duration and matching real epidemic profiles',
+      'Published in IEEE proceedings, contributing to public health strategies and vaccination allocation research'
+    ]
+  },
 ]; 

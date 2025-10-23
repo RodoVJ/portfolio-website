@@ -30,14 +30,6 @@ const Contact = () => {
                 <p>{contactInfo.email}</p>
               </div>
             </a>
-            
-            <div className="contact-method">
-              <div className="contact-icon">📍</div>
-              <div className="contact-details">
-                <h3>Location</h3>
-                <p>{contactInfo.location}</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
