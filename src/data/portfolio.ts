@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     period: 'Feb 2023 — Present',
     achievements: [
       'Promoted to Senior Full-Stack Developer after 2 years, recognizing high-impact contributions.',
-      'Boosted user task completion rate by 20% by implementing a system (BullMQ, PostgreSQL, Node.js) to schedule and send task reminders.',
+      'Boosted user task completion rate by 30% by implementing a system (BullMQ, PostgreSQL, Node.js) to schedule and send task reminders.',
       'Increased product exposure by building a REST API (Java, MongoDB) to allow task creation by third parties.',
       'Drove a 15% increase in user retention by creating a task admin dashboard (React) that addressed user needs identified through pitched product ideas.',
       'Reduced admin dashboard load time from 10+ seconds to under 1 second for high-volume task data by implementing front-end lazy loading.',
