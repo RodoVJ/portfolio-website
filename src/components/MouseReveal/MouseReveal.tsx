@@ -76,7 +76,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
               <mask id="reveal-mask">
                 <rect width="100%" height="100%" fill="black" />
                 {points.map((point) => {
-                  const radius = 200;
+                  const radius = 250;
 
                   return (
                     <circle
