@@ -18,8 +18,6 @@ const isMobile = typeof navigator !== 'undefined' && /Android|webOS|iPhone|iPad|
 
 const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
   const [points, setPoints] = useState<Point[]>([]);
-  const [, setRenderTrigger] = useState(0);
-  const animationFrameRef = useRef<number | null>(null);
   const lastPointRef = useRef<Point | null>(null);
   const pointIdRef = useRef(0);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -38,7 +36,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
 
       // Only add point if it's far enough from the last point (for performance)
       if (!lastPointRef.current || 
-          Math.hypot(newPoint.x - lastPointRef.current.x, newPoint.y - lastPointRef.current.y) > 2) {
+          Math.hypot(newPoint.x - lastPointRef.current.x, newPoint.y - lastPointRef.current.y) > 10) {
         lastPointRef.current = newPoint;
         setPoints((prev) => [...prev, newPoint]);
       }
@@ -52,41 +50,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
   }, []);
 
   // Update SVG size
-  useEffect(() => {
-    const updateSize = () => {
-      if (svgRef.current) {
-        svgRef.current.setAttribute('width', String(document.documentElement.scrollWidth));
-        svgRef.current.setAttribute('height', String(document.documentElement.scrollHeight));
-      }
-    };
 
-    updateSize();
-    window.addEventListener('resize', updateSize);
-    window.addEventListener('scroll', updateSize);
-
-    return () => {
-      window.removeEventListener('resize', updateSize);
-      window.removeEventListener('scroll', updateSize);
-    };
-  }, []);
-
-  // Trigger re-renders for smooth growth animation
-  useEffect(() => {
-    const animate = () => {
-      // Trigger re-render for smooth animations
-      setRenderTrigger(prev => prev + 1);
-      
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
 
 
   // Reset all paint strokes
@@ -98,7 +62,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
 
   return (
     <div className="mouse-reveal-container">
-      {(isSafari || isMobile) ? (
+      {( isSafari || isMobile) ? (
         // Safari and Mobile: Just show dark mode without effect
         <div className="dark-mode">
           {children}
@@ -112,15 +76,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
               <mask id="reveal-mask">
                 <rect width="100%" height="100%" fill="black" />
                 {points.map((point) => {
-                  const now = Date.now();
-                  const age = now - point.timestamp;
-                  const maxRadius = 200;
-                  const growthDuration = 10;
-                  
-                  let radius = maxRadius;
-                  if (age < growthDuration) {
-                    radius = (age / growthDuration) * maxRadius;
-                  }
+                  const radius = 200;
 
                   return (
                     <circle
