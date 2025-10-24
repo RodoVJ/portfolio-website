@@ -1,6 +1,6 @@
 .projects {
   padding: 5rem 0;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
 }
 
 .projects-grid {
@@ -12,7 +12,7 @@
 }
 
 .project-card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -93,12 +93,12 @@
 .project-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-secondary);
   margin: 0 0 1rem 0;
 }
 
 .project-description {
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin: 0 0 1.5rem 0;
 }
@@ -133,7 +133,7 @@
 .project-highlights li {
   margin-bottom: 0.6rem;
   line-height: 1.6;
-  color: #444;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }
 

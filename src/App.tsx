@@ -7,19 +7,22 @@ import Projects from './components/Projects/Projects';
 import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import MouseReveal from './components/MouseReveal/MouseReveal';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      <Contact />
-      <ScrollToTop />
-    </div>
+    <MouseReveal>
+      <div className="App">
+        <Header />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+        <ScrollToTop />
+      </div>
+    </MouseReveal>
   );
 }
 

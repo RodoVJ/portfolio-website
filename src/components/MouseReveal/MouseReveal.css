@@ -1,0 +1,104 @@
+.mouse-reveal-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.reveal-mask-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+
+.content-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dark-layer {
+  z-index: 1;
+}
+
+.light-layer {
+  z-index: 2;
+  mask: url(#reveal-mask);
+  -webkit-mask: url(#reveal-mask);
+}
+
+/* Reset button */
+.reset-paint-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.reset-paint-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.5);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.reset-paint-btn:active {
+  transform: translateY(-1px);
+}
+
+.reset-paint-btn svg {
+  flex-shrink: 0;
+}
+
+.reset-label {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .reset-paint-btn {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    gap: 0.6rem;
+  }
+  
+  .reset-paint-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reset-label {
+    display: none;
+  }
+  
+  .reset-paint-btn {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}
+

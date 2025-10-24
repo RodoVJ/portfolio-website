@@ -1,6 +1,6 @@
 .experience {
   padding: 5rem 0;
-  background: white;
+  background: var(--bg-primary);
 }
 
 .experience-timeline {
@@ -43,7 +43,7 @@
   text-align: right;
   padding-right: 2rem;
   font-weight: 600;
-  color: #1e3a8a;
+  color: var(--accent-primary);
   font-size: 0.9rem;
   align-self: flex-start;
   margin-top: 1.5rem;
@@ -52,7 +52,7 @@
 .experience-content {
   flex: 1;
   margin-left: 2rem;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -70,7 +70,7 @@
 .job-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-secondary);
   margin: 0;
   margin-bottom: 0.5rem;
 }
@@ -86,12 +86,12 @@
 .company {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1e3a8a;
+  color: var(--accent-primary);
 }
 
 .location {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .achievements {
@@ -102,7 +102,7 @@
 .achievements li {
   margin-bottom: 0.8rem;
   line-height: 1.6;
-  color: #444;
+  color: var(--text-secondary);
 }
 
 .achievements li:last-child {

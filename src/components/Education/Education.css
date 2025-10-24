@@ -1,6 +1,6 @@
 .education {
   padding: 3rem 0;
-  background: white;
+  background: var(--bg-primary);
 }
 
 .education-content {
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   padding: 3rem;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -44,14 +44,14 @@
 .institution {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: var(--text-secondary);
   margin: 0;
   margin-bottom: 0.5rem;
 }
 
 .degree {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.6;
