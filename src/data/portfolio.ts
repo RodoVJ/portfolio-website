@@ -3,7 +3,7 @@ import mitosVideo from '../assets/videos/mitos.mp4';
 import pandemicResearchImage from '../assets/images/pandemicResearch.png';
 
 export const contactInfo: ContactInfo = {
-  name: 'Ryan Vega',
+  name: 'Rodrigo Vega',
   email: 'vegarod75@gmail.com',
   location: 'St. Catharines, ON, Canada'
 };
