@@ -33,12 +33,144 @@
   -webkit-mask: url(#reveal-mask);
 }
 
-/* Reset button */
-.reset-paint-btn {
+.mouse-reveal-controls {
   position: fixed;
   bottom: 2rem;
   left: 2rem;
   z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.brush-control {
+  position: relative;
+  display: inline-block;
+}
+
+.brush-toggle-wrap {
+  display: flex;
+  align-items: stretch;
+  border-radius: 50px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
+  color: white;
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brush-toggle-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.5);
+}
+
+.brush-toggle-wrap--on {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.35);
+}
+
+.brush-toggle-wrap--on:hover {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 12px 35px rgba(5, 150, 105, 0.45);
+}
+
+.brush-toggle-wrap:active {
+  transform: translateY(-1px);
+}
+
+.brush-toggle-main,
+.brush-thickness-chevron-btn {
+  margin: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brush-toggle-main {
+  gap: 0.75rem;
+  padding: 1rem 0.85rem 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.brush-thickness-chevron-btn {
+  padding: 0 1.15rem 0 0.5rem;
+}
+
+.brush-thickness-chevron-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.brush-thickness-chevron-btn--open svg {
+  transform: rotate(180deg);
+}
+
+.brush-toggle-main:hover,
+.brush-thickness-chevron-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.brush-toggle-wrap--on .brush-toggle-main:hover,
+.brush-toggle-wrap--on .brush-thickness-chevron-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.brush-toggle-main svg,
+.brush-thickness-chevron-btn svg {
+  flex-shrink: 0;
+}
+
+.brush-toggle-label,
+.reset-label {
+  white-space: nowrap;
+}
+
+.brush-thickness-menu {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  left: auto;
+  min-width: 10rem;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.18);
+  z-index: 1001;
+}
+
+.brush-thickness-option {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.brush-thickness-option:hover {
+  background: #e2e8f0;
+}
+
+.brush-thickness-option--selected {
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+.reset-paint-btn {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -69,30 +201,55 @@
   flex-shrink: 0;
 }
 
-.reset-label {
-  white-space: nowrap;
-}
-
 @media (max-width: 768px) {
-  .reset-paint-btn {
+  .mouse-reveal-controls {
     bottom: 1.5rem;
     left: 1.5rem;
-    padding: 0.85rem 1.25rem;
+    gap: 0.6rem;
+  }
+
+  .brush-toggle-main {
+    padding: 0.85rem 0.65rem 0.85rem 1.25rem;
     font-size: 0.9rem;
     gap: 0.6rem;
   }
-  
+
+  .brush-thickness-chevron-btn {
+    padding: 0 1rem 0 0.4rem;
+  }
+
+  .brush-toggle-main svg,
   .reset-paint-btn svg {
     width: 18px;
     height: 18px;
   }
+
+  .brush-thickness-chevron-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .reset-paint-btn {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.9rem;
+    gap: 0.6rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .brush-toggle-label,
   .reset-label {
     display: none;
   }
-  
+
+  .brush-toggle-main {
+    padding: 0.75rem 0.5rem 0.75rem 0.85rem;
+  }
+
+  .brush-thickness-chevron-btn {
+    padding: 0 0.85rem 0 0.35rem;
+  }
+
   .reset-paint-btn {
     width: 56px;
     height: 56px;
@@ -101,4 +258,3 @@
     border-radius: 50%;
   }
 }
-
