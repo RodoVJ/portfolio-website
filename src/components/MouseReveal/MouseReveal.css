@@ -60,6 +60,37 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Cancel global `button` / `*:focus` seams between the two hit targets */
+.brush-toggle-wrap .brush-toggle-main,
+.brush-toggle-wrap .brush-thickness-chevron-btn {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.brush-toggle-wrap .brush-toggle-main:hover,
+.brush-toggle-wrap .brush-thickness-chevron-btn:hover,
+.brush-toggle-wrap .brush-toggle-main:focus,
+.brush-toggle-wrap .brush-thickness-chevron-btn:focus,
+.brush-toggle-wrap .brush-toggle-main:focus-visible,
+.brush-toggle-wrap .brush-thickness-chevron-btn:focus-visible,
+.brush-toggle-wrap .brush-toggle-main:active,
+.brush-toggle-wrap .brush-thickness-chevron-btn:active {
+  border: none;
+}
+
+.brush-toggle-wrap .brush-toggle-main:focus,
+.brush-toggle-wrap .brush-thickness-chevron-btn:focus,
+.brush-toggle-wrap .brush-toggle-main:focus-visible,
+.brush-toggle-wrap .brush-thickness-chevron-btn:focus-visible {
+  outline: none;
+}
+
+.brush-toggle-wrap:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.95);
+  outline-offset: 3px;
+}
+
 .brush-toggle-wrap:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(30, 58, 138, 0.5);
@@ -82,7 +113,6 @@
 .brush-toggle-main,
 .brush-thickness-chevron-btn {
   margin: 0;
-  border: none;
   background: transparent;
   color: inherit;
   font: inherit;
