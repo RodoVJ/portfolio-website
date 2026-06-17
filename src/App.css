@@ -1,34 +1,37 @@
 /* Global Styles */
 .App {
   text-align: left;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  text-align: center;
-  margin: 0;
-  color: var(--text-secondary);
+  text-align: left;
+  margin: 0 0 2.5rem;
+  color: var(--text-primary);
   position: relative;
-  padding-bottom: 1rem;
+  letter-spacing: -0.03em;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
-  border-radius: 2px;
+/* Monospace section marker rendered above the title, e.g. /01 about */
+.section-title[data-marker]::before {
+  content: attr(data-marker);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-transform: lowercase;
+  margin-bottom: 0.85rem;
 }
 
 /* Smooth scrolling */
@@ -43,29 +46,26 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #1e3a8a, #0c1e47);
-  border-radius: 4px;
+  background: var(--accent);
+  border-radius: 0;
+  border: 3px solid var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2563eb, #0a1735);
+  background: var(--accent-strong);
 }
 
 /* Responsive section title */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 }

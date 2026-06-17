@@ -3,9 +3,9 @@ import mitosVideo from '../assets/videos/mitos.mp4';
 import pandemicResearchImage from '../assets/images/pandemicResearch.png';
 
 export const contactInfo: ContactInfo = {
-  name: 'Rory Vega',
-  email: 'vegarod75@gmail.com',
-  location: 'St. Catharines, ON, Canada'
+  name: 'Leo Vega',
+  email: 'vega70vl@gmail.com',
+  location: 'Toronto, ON, Canada'
 };
 
 export const skills: Skills[] = [

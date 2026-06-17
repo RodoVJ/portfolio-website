@@ -104,8 +104,8 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
   return (
     <div className="mouse-reveal-container">
       {( isSafari || isMobile) ? (
-        // Safari and Mobile: Just show dark mode without effect
-        <div className="dark-mode">
+        // Safari and Mobile: Just show light mode without effect
+        <div className="light-base-fallback">
           {children}
         </div>
       ) : (
@@ -129,16 +129,16 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
             </defs>
           </svg>
 
-          {/* Dark mode layer (default/base) */}
-          <div className="content-layer dark-layer">
+          {/* Light mode layer (default/base) */}
+          <div className="content-layer base-layer">
+            {children}
+          </div>
+
+          {/* Dark mode layer with mask (revealed on mouse movement) */}
+          <div ref={lightLayerRef} className="content-layer reveal-layer">
             <div className="dark-mode">
               {children}
             </div>
-          </div>
-
-          {/* Light mode layer with mask (revealed on mouse movement) */}
-          <div ref={lightLayerRef} className="content-layer light-layer">
-            {children}
           </div>
         </>
       )}
@@ -154,7 +154,7 @@ const MouseReveal: React.FC<MouseRevealProps> = ({ children }) => {
                 onClick={() => setBrushActive((v) => !v)}
                 aria-pressed={brushActive}
                 aria-label={brushActive ? 'Turn off brush' : 'Turn on brush'}
-                title={brushActive ? 'Turn off brush' : 'Turn on brush to reveal light mode'}
+                title={brushActive ? 'Turn off brush' : 'Turn on brush to reveal dark mode'}
               >
                 <svg
                   width="20"

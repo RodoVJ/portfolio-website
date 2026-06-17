@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header/Header';
+import Ticker from './components/Ticker/Ticker';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
 import Skills from './components/Skills/Skills';
@@ -14,6 +15,7 @@ function App() {
     <MouseReveal>
       <div className="App">
         <Header />
+        <Ticker />
         <About />
         <Skills />
         <Experience />

@@ -5,7 +5,7 @@ const Experience = () => {
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title" data-marker="/03 experience">Experience</h2>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
             <div key={index} className="experience-item">

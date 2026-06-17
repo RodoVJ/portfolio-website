@@ -5,7 +5,7 @@ const Education = () => {
   return (
     <section id="education" className="education">
       <div className="container">
-        <h2 className="section-title">Education</h2>
+        <h2 className="section-title" data-marker="/05 education">Education</h2>
         <div className="education-content">
           {education.map((edu, index) => (
             <div key={index} className="education-item">

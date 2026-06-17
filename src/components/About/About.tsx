@@ -4,11 +4,11 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title" data-marker="/01 about">About</h2>
         <div className="about-content">
           <div className="about-text">
             <p>
-              I'm a passionate Senior Full-Stack Developer with over 4 years of experience 
+              I'm a passionate <em>Senior Full-Stack Developer</em> with over 4 years of experience 
               building scalable web applications and leading technical initiatives. My journey 
               spans from research at Brock University to developing enterprise solutions at Amazon 
               and now driving product innovation at Chaser.
