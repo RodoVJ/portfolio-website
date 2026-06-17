@@ -221,7 +221,7 @@
   animation: none;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1250px) {
   .pipeline {
     width: 56px;
   }
