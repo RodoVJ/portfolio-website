@@ -1,0 +1,249 @@
+.pipeline {
+  --progress: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 210px;
+  height: 100vh;
+  z-index: 900;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  text-align: right;
+}
+
+/* Header chip */
+.pl-head {
+  position: absolute;
+  top: 30px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  color: #9a9a9a;
+  letter-spacing: 0.04em;
+}
+
+.pl-head-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+  animation: pl-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes pl-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* Stage area */
+.pl-area {
+  position: absolute;
+  top: 92px;
+  bottom: 84px;
+  left: 0;
+  right: 0;
+}
+
+/* Vertical connector line */
+.pl-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 25px;
+  width: 2px;
+  background: rgba(140, 140, 140, 0.3);
+  border-radius: 2px;
+}
+
+.pl-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--progress) * 100%);
+  background: linear-gradient(#22c55e, #16a34a);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  border-radius: 2px;
+  transition: height 0.08s linear;
+}
+
+/* Stage row (clickable) */
+.pl-stage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 26px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  pointer-events: auto;
+  cursor: pointer;
+  text-align: right;
+}
+
+.pl-stage:hover .pl-name {
+  color: #8a8686;
+}
+
+.pl-stage:hover .pl-node {
+  border-color: #ededed;
+  transform: translateY(-50%) scale(1.18);
+}
+
+.pl-stage[data-state='passed']:hover .pl-node {
+  border-color: #4ade80;
+  background: #4ade80;
+}
+
+.pl-stage:focus {
+  outline: none;
+}
+
+.pl-stage:focus:not(:focus-visible) .pl-node {
+  outline: none;
+}
+
+.pl-stage:focus-visible .pl-node {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.pl-node {
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(150, 150, 150, 0.55);
+  background: var(--bg-primary, #f4f4ef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #07120a;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.pl-check {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pl-info {
+  position: absolute;
+  right: 46px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  line-height: 1.25;
+}
+
+.pl-name {
+  font-size: 0.7rem;
+  color: #9a9a9a;
+}
+
+.pl-state {
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+/* States */
+.pl-stage[data-state='pending'] .pl-state::after {
+  content: 'queued';
+  color: #8a8a8a;
+}
+
+.pl-stage[data-state='running'] .pl-state::after {
+  content: 'running…';
+  color: #f59e0b;
+}
+
+.pl-stage[data-state='passed'] .pl-state::after {
+  content: 'passed';
+  color: #22c55e;
+}
+
+.pl-stage[data-state='running'] .pl-name {
+  color: #8a8686;
+}
+
+.pl-stage[data-state='running'] .pl-node {
+  border-color: #f59e0b;
+  animation: pl-pulse 1.2s ease-out infinite;
+}
+
+.pl-stage[data-state='passed'] .pl-node {
+  border-color: #22c55e;
+  background: #22c55e;
+}
+
+.pl-stage[data-state='passed'] .pl-check {
+  opacity: 1;
+}
+
+@keyframes pl-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+  70% { box-shadow: 0 0 0 7px rgba(245, 158, 11, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* Footer status */
+.pl-foot {
+  position: absolute;
+  bottom: 32px;
+  right: 16px;
+  font-size: 0.72rem;
+}
+
+.pl-foot::after {
+  content: '● building…';
+  color: #f59e0b;
+}
+
+.pipeline[data-complete='true'] .pl-foot::after {
+  content: '✓ deployed';
+  color: #22c55e;
+}
+
+.pipeline[data-complete='true'] .pl-head-dot {
+  animation: none;
+}
+
+@media (max-width: 1180px) {
+  .pipeline {
+    width: 56px;
+  }
+  .pl-info,
+  .pl-head,
+  .pl-foot {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pipeline {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-head-dot,
+  .pl-stage[data-state='running'] .pl-node {
+    animation: none;
+  }
+  .pl-line-fill {
+    transition: none;
+  }
+}

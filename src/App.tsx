@@ -7,24 +7,26 @@ import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import MouseReveal from './components/MouseReveal/MouseReveal';
+import DeployPipeline from './components/DeployPipeline/DeployPipeline';
 
 function App() {
   return (
-    <MouseReveal>
-      <div className="App">
-        <Header />
-        <Ticker />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-        <ScrollToTop />
-      </div>
-    </MouseReveal>
+    <>
+      <MouseReveal>
+        <div className="App">
+          <Header />
+          <Ticker />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Contact />
+        </div>
+      </MouseReveal>
+      <DeployPipeline />
+    </>
   );
 }
 
